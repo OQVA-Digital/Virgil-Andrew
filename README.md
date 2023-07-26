@@ -1,4 +1,4 @@
 # Virgil-Andrew
 
-### Deploy
+### Deploys
 https://app.netlify.com/sites/fluffy-croquembouche-8faede/deploys
