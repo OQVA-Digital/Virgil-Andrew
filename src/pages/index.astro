@@ -5,6 +5,8 @@ import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import { getCollection } from "astro:content";
 
+import Stroke from "../components/Stroke.astro";
+
 const posts = await getCollection("blog");
 ---
 
@@ -14,6 +16,7 @@ const posts = await getCollection("blog");
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} og="/og/cover.jpg" />
 	</head>
 	<body>
+		<Stroke/>
 		<div class="flex">
 			<Header title={SITE_TITLE} />
 			<main>
@@ -22,7 +25,7 @@ const posts = await getCollection("blog");
 						<div class="content">
 							<img class="logo" src="/logo/logo-light.svg" alt="Virgil Andrew logo" draggable="false">
 
-							<h1>Strategic, targeted <span class="highlighted"><span>marketing solutions</span></span> designed to engage and grow mass participation events.</h1>
+							<h1>Strategic, targeted <span class="highlighted">marketing solutions<span></span></span> designed to engage and grow mass participation events.</h1>
 
 							<div class="cta_ctnr">
 								<a class="cta" href="/contact/" aria-label="">
@@ -48,63 +51,25 @@ const posts = await getCollection("blog");
 								playsinline></video> -->
 
 							<div class="txt" id="about">
-								<p class="big">
-									Our approach marries data-driven strategy with human-centred insights, ensuring your event not only reaches but resonates with the right audience - always moving, never alone.
-								</p>
+								<h2>
+									Our approach marries data-driven strategy with human-centred insights, ensuring your event not only reaches but resonates with the right audience - <b>always moving, never alone</b>.
+								</h2>
 
-								<p>
-									I've always been fascinated by the way
-									identity shapes our world. Over the years,
-									I've developed three fundamental ideas that
-									have become the core of my branding
-									philosophy:
-								</p>
+								<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis facilis cupiditate deleniti dignissimos ipsa, ipsum ea libero harum quia quo ipsam quis magnam laudantium iusto soluta non atque vitae suscipit.</p>
 
 								<ol>
 									<li>
-										<p>
-											<strong>Conscious Contrast:</strong>
-											Consciousness is nothing but the recognition
-											of contrast.
-										</p>
+										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit;</p>
 									</li>
 									<li>
-										<p>
-											<strong
-												>Compression of Sensation:</strong
-											> Brand is a compressed representation
-											of the carnal sensations which trigger
-											emotions to inspire thought woven into
-											stories that make up a collective of
-											individual identities.
-										</p>
+										<p>Esse distinctio quis asperiores quisquam expedita enim;</p>
 									</li>
 									<li>
-										<p>
-											<strong>Identity Tools:</strong> The
-											sole purpose of any organisation is to
-											provide the individual tools to build
-											their own identity.
-										</p>
+										<p>Excepturi eos amet omnis, assumenda libero tempora eligendi consectetur ut facere sequi autem saepe quaerat?</p>
 									</li>
 								</ol>
 
-								<p>
-									<b
-										>These principles are the bedrock of the
-										work I do</b
-									> and by leveraging them, I can help you to navigate
-									the complexities of the market, build a strong
-									brand identity, and secure lasting success.
-								</p>
-
-								<p>
-									<strong
-										>If you're ready to embark on a journey
-										towards a powerful, influential, and
-										successful brand, let's get started.</strong
-									>
-								</p>
+								<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus quam nulla, praesentium maiores laboriosam ea corporis alias explicabo sequi et? Maxime culpa ab sunt vero officia nesciunt atque ipsum tempore.</p>
 
 								<a
 									class="cta"
@@ -121,18 +86,7 @@ const posts = await getCollection("blog");
 				<section class="my_philosophy_sec">
 					<div class="ctnr">
 						<div class="content">
-							<q
-								>My philosophy is rooted in the concept that <b
-									><strong>identity tools</strong> are the cornerstone
-									of successful branding</b
-								>. By providing individuals with the tools to
-								build their identity, you empower them to become
-								true brand advocates.
-
-								<!-- <b>Consciousness is formed
-									through recognising contrast</b>, which allows us to create strong and impactful
-								identities that resonate with our target audience. -->
-							</q>
+							<q>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, velit ut <strong>deserunt placeat sit magnam</strong> hic asperiores nesciunt. Ad officiis id recusandae laboriosam ratione mollitia minima libero quia maiores nulla?</q>
 						</div>
 					</div>
 				</section>
@@ -142,34 +96,17 @@ const posts = await getCollection("blog");
 						<div class="content">
 							<div class="txt">
 								<p>
-									I've developed an <strong
-										>Identity Framework</strong
-									> to help you build clear customer avatars and
-									give your brand a competitive edge. This framework
-									will guide you through the process of <b
-										>identifying the key individuals,
-										events, locations, and sacrifices that
-										shape your customers' identities.</b
-									>
+									Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum ipsa harum maxime fugiat similique, sed sit, quam natus sapiente modi vel labore enim officia iusto nam debitis eius unde. Eveniet?
 								</p>
 
 								<p>
-									By understanding and leveraging these
-									elements, you can create a <b
-										>powerful connection with your audience</b
-									> and drive your brand's success.
+									Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis qui ipsum non. Assumenda, totam tempore! In dignissimos explicabo, exercitationem ullam odio asperiores repellat omnis fugiat officia, quidem doloremque aut eos.
 								</p>
 							</div>
 
 							<div class="box">
 								<p>
-									Give your potential customers what they
-									want, <b>identity</b>. Sacrifice your phone
-									number for a call back explaining the
-									Identity Framework, designed to help you
-									build clear customer avatars and craft a <b
-										>compelling brand story</b
-									>… I promise not to share it with anyone.
+									Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla architecto aut tempore iure quasi quia quaerat tempora et aliquam quis. Velit ullam ea sunt quod voluptatem officia totam labore delectus!
 								</p>
 
 								<form
@@ -254,12 +191,7 @@ const posts = await getCollection("blog");
 						<div class="content">
 							<div class="title">
 								<h3>Blog</h3>
-								<sub
-									>Cobbling together subjective perspectives
-									to get a <b
-										>glimpse of the objective truth</b
-									>.</sub
-								>
+								<sub>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</sub>
 							</div>
 						</div>
 

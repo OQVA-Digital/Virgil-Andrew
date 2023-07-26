@@ -1,5 +1,5 @@
 body {
-    background-color: var(--c3);
+    background-color: var(--dark-da);
 }
 
 main {
@@ -77,7 +77,7 @@ textarea {
     background-color: var(--c3);
     box-sizing: border-box;
     color: var(--light);
-    font-family: 'Brooklyn', sans-serif;
+    font-family: 'Creato', sans-serif;
     border: 0.1rem solid var(--grey);
     font-size: 1.6rem;
     /* box-shadow: -0.3rem -0.3rem 0.9rem #fee1, 0.3rem 0.3rem 0.9rem #0005; */
