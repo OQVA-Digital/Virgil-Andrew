@@ -1,0 +1,115 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+import "../../styles/contact.css";
+import "../../styles/sub-pages.css";
+
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <BaseHead title={title} description={description} />
+
+        <script src="../../scripts/form.js"></script>
+    </head>
+
+    <body>
+        <div class="flex">
+            <Header />
+
+            <main>
+                <div class="ctnr">
+                    <div>
+                        <a href="/index.html" class="back">Return</a>
+
+                        <div class="title flex">
+                            <h1>Contact</h1>
+
+                            <div class="social">
+                                <a
+                                    href="https://instagram.com/acroitor"
+                                    target="_blank"
+                                    class="instagram"
+                                    title="Instagram"></a>
+
+                                <a
+                                    href="https://www.threads.net/@acroitor"
+                                    target="_blank"
+                                    class="threads"
+                                    title="Threads"></a>
+
+                                <!-- <a
+                                    href="https://twitter.com/andreicroitor"
+                                    target="_blank"
+                                    class="twitter"
+                                    title="Twitter"></a>
+
+                                <a
+                                    href="https://www.tiktok.com/@a.croitor"
+                                    target="_blank"
+                                    class="tiktok"
+                                    title="TikTok"></a>
+
+                                <a
+                                    href="https://www.linkedin.com/in/andreicroitor/"
+                                    target="_blank"
+                                    class="linkedin"
+                                    title="LinkedIn"></a> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <form
+                        class="contact_form"
+                        name="main-contact"
+                        method="POST"
+                        data-netlify="true"
+                    >
+                        <div class="flex">
+                            <p>
+                                <label
+                                    >Your Name <input
+                                        type="text"
+                                        name="name"
+                                        required
+                                    /></label
+                                >
+                            </p>
+
+                            <p>
+                                <label
+                                    >Your Email <input
+                                        type="email"
+                                        name="email"
+                                        required
+                                    /></label
+                                >
+                            </p>
+                        </div>
+
+                        <p>
+                            <label
+                                >Message <textarea name="message" required
+                                ></textarea></label
+                            >
+                        </p>
+
+                        <p>
+                            <button type="submit" class="submit">Submit</button>
+                        </p>
+                    </form>
+                </div>
+            </main>
+        </div>
+
+        <Footer />
+
+        <script>
+            document.querySelector("input").focus();
+        </script>
+    </body>
+</html>

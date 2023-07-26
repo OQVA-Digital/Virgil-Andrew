@@ -1,0 +1,107 @@
+---
+import HeaderLink from "./HeaderLink.astro";
+import { SITE_TITLE } from "../consts";
+import "../styles/header.css";
+---
+
+<!-- <header>
+	<h2>
+		{SITE_TITLE}
+	</h2>
+	<nav>
+		<HeaderLink href="/">Home</HeaderLink>
+		<HeaderLink href="/blog">Blog</HeaderLink>
+		<HeaderLink href="/about">About</HeaderLink>
+		<HeaderLink href="https://twitter.com/astrodotbuild" target="_blank">Twitter</HeaderLink>
+		<HeaderLink href="https://github.com/withastro/astro" target="_blank">GitHub</HeaderLink>
+	</nav>
+</header> -->
+<header>
+	<div class="ctnr">
+		<button class="hambt" type="button" name="toggle-menu-button">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+
+		<div class="social">
+			<a
+				href="https://instagram.com/acroitor"
+				target="_blank"
+				class="instagram"
+				title="Instagram"></a>
+
+			<a
+				href="https://www.threads.net/@acroitor"
+				target="_blank"
+				class="threads"
+				title="Threads"></a>
+
+			<!-- <a
+				href="https://twitter.com/andreicroitor"
+				target="_blank"
+				class="twitter"
+				title="Twitter"></a>
+
+			<a
+				href="https://www.tiktok.com/@a.croitor"
+				target="_blank"
+				class="tiktok"
+				title="TikTok"></a>
+
+			<a
+				href="https://www.linkedin.com/in/andreicroitor/"
+				target="_blank"
+				class="linkedin"
+				title="LinkedIn"></a> -->
+		</div>
+
+		<a href="/index.html" title="Home · Andrei Croitor">
+			<img
+				class="logo"
+				src="/logo/logo-light-reduced.svg"
+				alt="Website Logo"
+				width="50"
+				height="39"
+			/>
+		</a>
+
+		<nav>
+			<a href="/index.html">Home</a>
+
+			<a href="/index.html#about">About</a>
+
+			<a href="/blog/">Blog</a>
+
+			<a href="/contact/">Contact</a>
+		</nav>
+	</div>
+</header>
+
+<script is:inline>
+const menuBt = document.querySelector(".hambt");
+const nav = document.querySelector("header nav");
+const navBts = document.querySelectorAll("header nav a");
+
+let showingMenu = false;
+
+function toggleNav() {
+	if (showingMenu == false) {
+		nav.classList.add("show");
+		menuBt.classList.add("close");
+
+		showingMenu = true;
+	} else {
+		nav.classList.remove("show");
+		menuBt.classList.remove("close");
+
+		showingMenu = false;
+	}
+}
+
+menuBt.addEventListener("click", toggleNav);
+
+for (i = 0; i < navBts.length; i++) {
+	navBts[i].addEventListener("click", toggleNav);
+}
+</script>
