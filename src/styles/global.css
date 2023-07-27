@@ -267,7 +267,7 @@ main>.ctnr {
 	fill: none;
 	stroke: var(--secondary);
 	stroke-miterlimit: 10;
-	stroke-width: 0.2rem;
+	stroke-width: 0.1rem;
 	stroke-dasharray: 185rem;
 	stroke-dashoffset: 50vh;
 	vector-effect: non-scaling-stroke;
@@ -333,7 +333,11 @@ main>.ctnr {
     -moz-transform: skew(-10deg, 0deg);
     -ms-transform: skew(-10deg, 0deg);
     -o-transform: skew(-10deg, 0deg);
-	margin-inline: auto;
+    margin-inline: auto;
+    -webkit-transition: background-color 0.4s ease;
+    -moz-transition: background-color 0.4s ease;
+    -ms-transition: background-color 0.4s ease;
+    -o-transition: background-color 0.4s ease;
 }
 
 .cta span {
