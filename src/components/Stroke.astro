@@ -4,42 +4,33 @@
 <?xml version="1.0" encoding="UTF-8"?><svg 
 class="logo_outline"
 xmlns="http://www.w3.org/2000/svg"
-viewBox="0 0 753.54 590.04"
+viewBox="0 0 2000 590.04"
 preserveAspectRatio="xMinYMin slice" id="Camada_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1146.69 1081"><defs>
 <style>.cls-1{fill:none;stroke:#ff4800;stroke-miterlimit:10;}</style></defs><line class="cls-1" x1=".86" y1="512.85" x2="1080.09" y2="318.4"/><line class="cls-1" x1="1080.09" y1="212.39" x2=".09" y2="406.97"/><line class="cls-1" x1=".86" y1="300.96" x2="1080.09" y2="106.51"/><line class="cls-1" x1="1080.09" y1=".49" x2=".09" y2="195.08"/><line class="cls-1" x1=".86" y1="724.75" x2="1080.09" y2="530.3"/><line class="cls-1" x1="1080.09" y1="424.28" x2=".09" y2="618.87"/><line class="cls-1" x1=".86" y1="936.65" x2="1080.09" y2="742.19"/><line class="cls-1" x1=".86" y1="1042.59" x2="1080.09" y2="848.14"/><line class="cls-1" x1=".86" y1="1148.54" x2="1080.09" y2="954.09"/><line class="cls-1" x1=".86" y1="1254.49" x2="1080.09" y2="1060.04"/><line class="cls-1" x1=".86" y1="1360.44" x2="1080.09" y2="1165.99"/><line class="cls-1" x1=".86" y1="1466.39" x2="1080.09" y2="1271.93"/><line class="cls-1" x1="1080.09" y1="636.18" x2=".09" y2="830.76"/></svg>
 
 
-
 <script is:inline>
-// let increment = 0;
 let scroll;
 
 const paths = document.querySelectorAll("svg line");
 
 for (i = 0; i < paths.length; i++) {
-    paths[i].style.strokeDashoffset = `${scroll * 1.5}px`;
-
-    paths[i].style.strokeDasharray = `${Math.random() * 120 + 60}rem`;
+    paths[i].style.strokeDasharray = `${Math.floor(Math.random() * 1000 + 800)}px`;
 }
 
 window.addEventListener("scroll", function () {
     scroll = window.scrollY;
 
     for (i = 0; i < paths.length; i++) {
-        paths[i].style.strokeDashoffset = `${scroll * 2}px`;
+        paths[i].style.strokeDashoffset = `${Math.floor(scroll)}px`;
     }
 });
-
-// setTimeout(() => {
-// }, 200);
 
 document.onreadystatechange = () => {
     if (document.readyState === "complete") {
         for (i = 0; i < paths.length; i++) {
-            paths[i].style.strokeDashoffset = `${Math.random() * 120 + 60}rem`;
+            paths[i].style.strokeDashoffset = `${Math.floor(Math.random() * 3000 + 60)}px`;
         }
-
-        // document.querySelector('.logo_outline').style.opacity = 1
     }
 }
 </script>

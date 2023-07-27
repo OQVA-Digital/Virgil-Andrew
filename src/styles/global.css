@@ -8,6 +8,7 @@
 
 	--dark: #111111;
 	--dark-da:#0a0a0a;
+	--dark-la:#191919;
 
 	--primary: #ff4800;
 	--primary-da: #cc3a00;
@@ -307,18 +308,11 @@ main>.ctnr {
 
 
 
-
-
-
-
-
-/* .intro_sec .cta_ctnr */
-
-.intro_sec .cta {
+.cta {
+    display: block;
     background-color: var(--dark);
     /*text-align: center;
     */color: var(--light);
-    display: inline-flex;
     justify-content: center;
     align-items: center;
     font-weight: 600;
@@ -327,7 +321,6 @@ main>.ctnr {
     border-radius: 0.3rem;
     letter-spacing: 0.05rem;
     border: 0.2rem solid var(--primary-la);
-    backdrop-filter: blur(0.4rem);
     position: relative;
     z-index: 9;
     transition: background-color 0.4s ease;
@@ -340,6 +333,7 @@ main>.ctnr {
     -moz-transform: skew(-10deg, 0deg);
     -ms-transform: skew(-10deg, 0deg);
     -o-transform: skew(-10deg, 0deg);
+	margin-inline: auto;
 }
 
 .cta span {
@@ -365,6 +359,14 @@ main>.ctnr {
 .cta:hover {
 	background-color: var(--primary);
 	transition: background-color 0.05s ease;
+}
+
+
+
+
+/* .intro_sec .cta_ctnr */
+
+.intro_sec .cta {
 }
 
 .cta_ctnr a:not(.cta) {
@@ -430,39 +432,6 @@ main>.ctnr {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media screen and (min-width: 650px) {
-
-	.path01 {
-		/* transition: stroke-dashoffset 3s cubic-bezier(0, 0, 0.2, 1); */
-		/* stroke-width: 0.15rem; */
-	}
-
-	.logo_outline {
-		/* opacity: unset; */
-		/* inset: -4rem; */
-		/* top: -8vh; */
-		/* transform: translateY(-25%); */
-	}
-}
 
 
 
@@ -666,7 +635,7 @@ section>.ctnr {
 	scroll-margin: 10rem;
 	backdrop-filter: blur(0.4rem);
 	z-index: 2;
-	background-color: rgb(17 17 17 / 60%);
+	/* background-color: rgb(17 17 17 / 60%); */
 	position: relative;
 }
 
@@ -988,12 +957,9 @@ section>.ctnr {
 .blog_sec {
 	/* min-height: clamp(75vh, 15vw, 94vh); */
 	background-color: var(--dark);
-	background-image: url(/Andrei/andrei03.jpg);
-	background-image: linear-gradient(9deg, var(--c3) 4%, transparent 38%), -webkit-image-set(url(/Andrei/andrei03-1x.webp) 1x,
-			url(/Andrei/andrei03-2x.webp) 2x,
-			url(/Andrei/andrei03-1x.jpg) 1x,
-			url(/Andrei/andrei03-2x.jpg) 2x);
-	background-attachment: fixed;
+	/* background-image: url(/Andrei/andrei03.jpg); */
+	/* background-image: linear-gradient(9deg, var(--c3) 4%, transparent 38%), -webkit-image-set(url(/Andrei/andrei03-1x.webp) 1x, url(/Andrei/andrei03-2x.webp) 2x, url(/Andrei/andrei03-1x.jpg) 1x, url(/Andrei/andrei03-2x.jpg) 2x); */
+	/* background-attachment: fixed; */
 }
 
 .blog_sec>.ctnr {

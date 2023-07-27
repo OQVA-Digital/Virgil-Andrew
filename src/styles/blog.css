@@ -263,7 +263,7 @@ article .txt {
     z-index: 9;
     padding: 1rem 0;
     box-sizing: border-box;
-    backdrop-filter: blur(0.4rem);
+    /* backdrop-filter: blur(0.4rem); */
     background-color: rgb(17 17 17 / 60%);
     font-size: clamp(1.6rem, calc(1vw + 1vh), 1.7rem);
 }
