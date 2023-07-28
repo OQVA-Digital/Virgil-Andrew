@@ -22,19 +22,7 @@ main {
 
 main>.ctnr {
     width: var(--width-mobile);
-    padding: clamp(2rem, calc(1.5vw + 1.5vh), 6rem) 0 0;
-}
-
-.back {
-    font-size: clamp(1.6rem, 3vw, 1.8rem);
-    display: inline-flex;
-    padding: 0.8rem 1rem 0.8rem 1rem;
-    background-color: transparent;
-    position: relative;
-    gap: 1.4rem;
-    left: -1rem;
-    transition: background-color 0.3s ease;
-    border-radius: 0.3rem;
+    padding: clamp(2rem, 10vmin, 6rem) 0 0;
 }
 
 .back::before {

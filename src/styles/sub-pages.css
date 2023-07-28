@@ -10,11 +10,11 @@ main {
 
 main>.ctnr {
     width: var(--width-mobile);
-    padding: clamp(2rem, calc(1.5vw + 1.5vh), 6rem) 0 0;
+    padding: clamp(2rem, 10vmin, 6rem) 0 0;
 }
 
 .back {
-    font-size: clamp(1.6rem, 3vw, 1.8rem);
+    font-size: clamp(1.6rem, 5vw, 1.8rem);
     display: inline-flex;
     padding: 0.8rem 1rem 0.8rem 1rem;
     background-color: transparent;
@@ -23,6 +23,8 @@ main>.ctnr {
     left: -1rem;
     transition: background-color 0.3s ease;
     border-radius: 0.3rem;
+    font-weight: 700;
+    font-style: italic;
 }
 
 .back::before {

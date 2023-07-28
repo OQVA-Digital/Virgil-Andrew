@@ -99,12 +99,12 @@ picture img {
 
 /* Track */
 ::-webkit-scrollbar-track {
-	background: var(--c3);
+	background: var(--dark);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-	background: white;
+	background: var(--primary);
 }
 
 @font-face {
@@ -145,6 +145,12 @@ picture img {
 	font-weight: 600;
 	font-style: normal;
 	font-display: swap;
+} @font-face {
+	font-family: 'Creato';
+	src: url('/fonts/CreatoDisplay-BoldItalic.otf');
+	font-weight: 600;
+	font-style: italic;
+	font-display: swap;
 }
 
 @font-face {
@@ -153,6 +159,12 @@ picture img {
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
+} @font-face {
+	font-family: 'Creato';
+	src: url('/fonts/CreatoDisplay-ExtraBoldItalic.otf');
+	font-weight: 700;
+	font-style: italic;
+	font-display: swap;
 }
 
 @font-face {
@@ -160,6 +172,12 @@ picture img {
 	src: url('/fonts/CreatoDisplay-Black.otf');
 	font-weight: 800;
 	font-style: normal;
+	font-display: swap;
+} @font-face {
+	font-family: 'Creato';
+	src: url('/fonts/CreatoDisplay-BlackItalic.otf');
+	font-weight: 800;
+	font-style: italic;
 	font-display: swap;
 }
 
@@ -254,7 +272,7 @@ main>.ctnr {
 	/*filter: drop-shadow(-2rem -1rem 1rem var(--secondary));
 	*/pointer-events: none;
 	transform: scale(1.06);
-	z-index: 9;
+    z-index: 1;
 	/*opacity: 0;
 	*/transition: opacity 0s ease;
 	-webkit-transition: opacity 0s ease;
@@ -500,17 +518,19 @@ section>.ctnr {
 	flex-direction: column;
 	align-items: flex-start;
 	position: relative;
+	background-position: center;
 }
 
 .intro_sec>.ctnr {
     background-color: rgb(13 11 13 / 75%);
-    padding: clamp(8rem, 20vmin, 14rem) 0;
+    padding: clamp(8rem, 24vmin, 14rem) 0;
 }
 
 .intro_sec .logo {
     width: clamp(10rem, 85vmin, 70rem);
     margin-inline: auto;
     display: block;
+    mix-blend-mode: screen;
 }
 
 .intro_sec h1 {
@@ -530,6 +550,7 @@ section>.ctnr {
 
 .highlighted {
     background-color: var(--primary-da);
+    margin-block: 0.2rem;
     position: relative;
     -webkit-box-decoration-break: clone;
     padding: 0 1.5rem;
@@ -637,7 +658,7 @@ section>.ctnr {
 .about_sec .content .txt {
 	margin-top: 3rem;
 	scroll-margin: 10rem;
-	backdrop-filter: blur(0.4rem);
+	/* backdrop-filter: blur(0.4rem); */
 	z-index: 2;
 	/* background-color: rgb(17 17 17 / 60%); */
 	position: relative;
@@ -722,15 +743,8 @@ section>.ctnr {
 
 
 
-.my_philosophy_sec.inverted b,
-.my_philosophy_sec.inverted strong {
-	color: var(--secondary-da);
-	background-color: transparent;
-}
-
-
 .my_philosophy_sec {
-	background-color: var(--secondary);
+    background-color: var(--highlight);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -740,10 +754,6 @@ section>.ctnr {
 	padding: clamp(5rem, 9vw, 12rem) 0;
 }
 
-.my_philosophy_sec.inverted {
-	background-color: var(--c3);
-	color: var(--light);
-}
 
 .my_philosophy_sec>.ctnr {
 	display: flex;
@@ -796,11 +806,6 @@ section>.ctnr {
 	justify-content: center;
 	align-items: center;
 	/* display: none; */
-}
-
-.framework_sec.inverted {
-	background-color: var(--primary);
-	color: var(--light);
 }
 
 .framework_sec .box>button {
@@ -976,28 +981,33 @@ section>.ctnr {
 }
 
 .blog_sec .ctnr>a {
-	font-size: clamp(3rem, 4vw, 3.5rem);
-	font-family: 'Creato';
-	letter-spacing: 0.05em;
-	line-height: 1;
-	position: absolute;
-	bottom: clamp(3.5rem, calc(4vw + 5vh), 7rem);
-	width: var(--width-mobile);
-	text-decoration: underline;
-	text-underline-offset: 1rem;
-	text-align: center;
-	z-index: 9;
+    font-size: clamp(2.5rem, 7vw, 3.5rem);
+    font-family: 'Creato';
+    /* letter-spacing: 0.05em; */
+    line-height: 1;
+    position: absolute;
+    bottom: clamp(3.5rem, calc(4vw + 5vh), 7rem);
+    width: var(--width-mobile);
+    text-align: center;
+    z-index: 9;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--highlight);
 }
 
 .blog_sec .ctnr>a::after {
-	content: '';
-	position: absolute;
-	width: 0.7rem;
-	height: 0.7rem;
-	border-top: 0.4rem solid;
-	border-right: 0.4rem solid;
-	border-color: var(--light);
-	transform: translate(1rem, 0.25em) rotate(45deg);
+    content: '';
+    position: absolute;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-top: 0.3rem solid;
+    border-right: 0.3rem solid;
+    border-color: var(--light);
+    transform: translate(1rem, -0.2rem);
+    -webkit-transform: translate(1rem, -0.2rem);
+    -moz-transform: translate(1rem, -0.2rem);
+    -ms-transform: translate(1rem, -0.2rem);
+    -o-transform: translate(1rem, -0.2rem);
 }
 
 .blog_sec .title {
@@ -1007,12 +1017,14 @@ section>.ctnr {
 }
 
 .blog_sec h3 {
-	font-size: clamp(5.4rem, calc(4.8vw + 4.8vh), 13rem);
-	line-height: 1;
-	font-family: 'Creato', sans-serif;
-	letter-spacing: 0.05em;
-	margin-bottom: -1rem;
-	font-weight: 100;
+    font-size: clamp(5.4rem, calc(4.8vw + 4.8vh), 13rem);
+    line-height: 1;
+    font-family: 'Creato', sans-serif;
+    letter-spacing: 0.05em;
+    margin-bottom: -1rem;
+    font-weight: 700;
+    color: var(--primary);
+    font-style: italic;
 }
 
 .blog_sec sub {
@@ -1033,10 +1045,11 @@ section>.ctnr {
 	overflow-x: auto;
 	gap: clamp(2.5rem, calc(2vh + 2vh), 4rem);
 	width: clamp(15rem, 100vw, 130rem);
-	padding: 3rem 8vw 12rem;
+    padding: 3rem 8vw 12rem 12vw;
 	box-sizing: border-box;
 	z-index: 9;
 	-webkit-mask-image: linear-gradient(90deg, white calc(100% - 8vw), transparent);
+    margin-bottom: 1rem;
 }
 
 .blog_carousel a {
@@ -1046,9 +1059,9 @@ section>.ctnr {
     align-items: center;
     background-color: var(--dark);
     border-radius: 1.8rem;
-    min-width: clamp(17rem, calc(20vh + 30vw), 38rem);
+    min-width: clamp(17rem, calc(20vh + 30vw), 47rem);
     max-width: 40rem;
-    height: clamp(28rem, 100vw, 40rem);
+    height: clamp(28rem, 80vw, 40rem);
     max-height: 70vh;
     padding: 3rem clamp(1.5rem, 5vw, 3rem);
     box-sizing: border-box;
@@ -1064,23 +1077,41 @@ section>.ctnr {
     cursor: pointer;
     transition: transform 1s 0.1s ease, border-color 0.3s ease;
     overflow: hidden;
+    transform: skew(-10deg, 0);
+    -webkit-transform: skew(-10deg, 0);
+    -moz-transform: skew(-10deg, 0);
+    -ms-transform: skew(-10deg, 0);
+    -o-transform: skew(-10deg, 0);
 }
 
 .blog_carousel a .cover {
-	position: absolute;
-	inset: 0;
-	z-index: 0;
-	opacity: 0.6;
-	bottom: 0;
-	height: 100%;
-	object-fit: cover;
-	width: 100%;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.6;
+    bottom: 0;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+    transform: skew(10deg, 0) scale(1.2);
+    -webkit-transform: skew(10deg, 0) scale(1.2);
+    -moz-transform: skew(10deg, 0) scale(1.2);
+    -ms-transform: skew(10deg, 0) scale(1.2);
+    -o-transform: skew(10deg, 0) scale(1.2);
 }
 
 .blog_carousel a:hover {
-	transform: translateY(-0.7rem);
-	transition: transform 0.2s ease, border-color 0.1s ease;
 	border-color: var(--primary);
+	transform: translateY(-0.7rem) skew(-10deg, 0);
+	-webkit-transform: translateY(-0.7rem) skew(-10deg, 0);
+	-moz-transform: translateY(-0.7rem) skew(-10deg, 0);
+	-ms-transform: translateY(-0.7rem) skew(-10deg, 0);
+	-o-transform: translateY(-0.7rem) skew(-10deg, 0);
+	transition: transform 0.2s ease, border-color 0.1s ease;
+	-webkit-transition: transform 0.2s ease, border-color 0.1s ease;
+	-moz-transition: transform 0.2s ease, border-color 0.1s ease;
+	-ms-transition: transform 0.2s ease, border-color 0.1s ease;
+	-o-transition: transform 0.2s ease, border-color 0.1s ease;
 }
 
 .blog_carousel article:hover .read_more {
@@ -1092,6 +1123,11 @@ section>.ctnr {
 	font-weight: 600;
 	cursor: pointer;
 	position: relative;
+    /* transform: skew(10deg, 0);
+    -webkit-transform: skew(10deg, 0);
+    -moz-transform: skew(10deg, 0);
+    -ms-transform: skew(10deg, 0);
+    -o-transform: skew(10deg, 0); */
 }
 
 .blog_carousel a h4 b {
@@ -1143,23 +1179,23 @@ section>.ctnr {
 
 
 
-.social .instagram {
+.social .instagram.icon {
 	background-image: url(/icons/instagram.svg);
 }
 
-.social .threads {
+.social .threads.icon {
 	background-image: url(/icons/threads.svg);
 }
 
-.social .twitter {
+.social .twitter.icon {
 	background-image: url(/icons/twitter.svg);
 }
 
-.social .tiktok {
+.social .tiktok.icon {
 	background-image: url(/icons/tiktok.svg);
 }
 
-.social .linkedin {
+.social .linkedin.icon {
 	background-image: url(/icons/linkedin.svg);
 }
 
@@ -1176,7 +1212,7 @@ footer {
     align-items: center;
     min-height: clamp(10rem, calc(50vh + 18vw), 50rem);
     font-size: clamp(4rem, 5vmin, 7rem);
-    background-color: var(--highlight);
+    background-color: var(--primary);
     color: var(--c3);
     font-weight: 700;
     text-align: center;
@@ -1196,7 +1232,7 @@ footer .social a,
 footer button {
 	height: 4rem;
 	/* border: 0.2rem solid var(--light); */
-	padding: 1rem;
+	/* padding: 1rem; */
 	box-sizing: border-box;
 	background-size: 2rem;
 	border-radius: 0.5rem;
@@ -1212,7 +1248,7 @@ footer button {
 footer .social a {
 	min-width: 4rem;
 	font-family: 'Creato', sans-serif;
-	padding: 0.3rem 1.5rem 0.3rem 1rem;
+	/* padding: 0.3rem 1.5rem 0.3rem 1rem; */
 	cursor: pointer;
 	display: flex;
 	gap: 1rem;
@@ -1415,12 +1451,9 @@ footer .author a {
 	.blog_carousel {
 		padding: 3vh clamp(5rem, 8vw, 25rem) clamp(5rem, 15vw, 16rem);
 		width: calc(100vw - clamp(11rem, calc(7vw + 6vh), 18rem));
-		margin: 0 0 0 auto;
+		margin: 0 0 1rem auto;
 		-webkit-mask-image: linear-gradient(90deg, white calc(100% - clamp(5rem, 7vw, 12rem)), transparent);
 	}
-
-
-
 }
 
 

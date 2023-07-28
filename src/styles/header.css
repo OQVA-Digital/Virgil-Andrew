@@ -2,7 +2,7 @@ header {
     background-color: var(--dark);
     border-bottom: 0.1rem solid var(--dark-la);
     width: 100%;
-    min-height: clamp(7rem, 18vw, 8rem);
+    min-height: clamp(3rem, 9vw, 8rem);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -19,11 +19,13 @@ header>.ctnr {
     flex-direction: row-reverse;
     align-items: center;
     justify-content: space-between;
+    transform: translateY(50%);
 }
 
-header .logo {
+header .logo_anchor img {
     width: clamp(4rem, 14vmin, 7rem);
     display: flex;
+    filter: drop-shadow(-0.2rem 0.5rem 0 var(--dark));
 }
 
 header .social,
@@ -38,16 +40,52 @@ footer .social {
     background-repeat: no-repeat;
     background-position: center;
     transition: background-color 0.3s ease;
+    transform: skew(-10deg, 0);
+    -webkit-transform: skew(-10deg, 0);
+    -moz-transform: skew(-10deg, 0);
+    -ms-transform: skew(-10deg, 0);
+    -o-transform: skew(-10deg, 0);
+}
+
+.social a span {
+    transform: skew(10deg, 0);
+    -webkit-transform: skew(10deg, 0);
+    -moz-transform: skew(10deg, 0);
+    -ms-transform: skew(10deg, 0);
+    -o-transform: skew(10deg, 0);
+    width: 55%;
+    height: 55%;
+}
+
+header .logo_anchor, header .hambt {
+    position:relative;
+    z-index: 2;
+}
+
+header .social {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    width: fit-content;
+    margin-inline: auto;
 }
 
 header .social a {
     width: clamp(2rem, calc(3vw + 2.4vh), 3.5rem);
     min-height: clamp(2rem, calc(3vw + 2.4vh), 3.5rem);
-    border: 0.1rem solid var(--dark-la);
-    border-radius: 50%;
+    /* border: 0.1rem solid var(--dark-la); */
     display: block;
     background-size: 45%;
-    background-color: var(--dark);
+    background-color: var(--dark-la);
+    border-radius: 0.3rem;
+    -webkit-border-radius: 0.3rem;
+    -moz-border-radius: 0.3rem;
+    -ms-border-radius: 0.3rem;
+    -o-border-radius: 0.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .nav_ctnr {
@@ -56,12 +94,8 @@ header .social a {
 
 header nav {
     position: absolute;
-    min-height: 10rem;
-    min-width: 30rem;
-    background-color: var(--primary);
     display: flex;
     flex-direction: column;
-    padding: clamp(2rem, 4vw, 2.5rem);
     font-weight: 800;
     box-sizing: border-box;
     font-size: 1.6rem;
@@ -70,28 +104,46 @@ header nav {
     right: 0;
     left: 0;
     text-align: center;
-    border-bottom: 0.1rem solid var(--primary-la);
-    opacity: 0;
     letter-spacing: 0.04em;
+    opacity: 0;
     visibility: hidden;
     transition: opacity 0.15s ease, visibility 0.15s ease, transform 0.4s ease;
     -webkit-transition: opacity 0.15s ease, visibility 0.15s ease, transform 0.4s ease;
     -moz-transition: opacity 0.15s ease, visibility 0.15s ease, transform 0.4s ease;
     -ms-transition: opacity 0.15s ease, visibility 0.15s ease, transform 0.4s ease;
     -o-transition: opacity 0.15s ease, visibility 0.15s ease, transform 0.4s ease;
+    transition-delay: 0.6s;
 }
 
 header nav.show {
     opacity: 1;
     visibility: visible;
+    transition-delay: 0s;
+}
+
+header nav.show a {
+    opacity: 1;
+    transform: translateX(0) skew(-10deg, 0);
+    -webkit-transform: translateX(0) skew(-10deg, 0);
+    -moz-transform: translateX(0) skew(-10deg, 0);
+    -ms-transform: translateX(0) skew(-10deg, 0);
+    -o-transform: translateX(0) skew(-10deg, 0);
+}
+
+header nav.show a span {
+    transform: skew(10deg, 0);
+    -webkit-transform: skew(10deg, 0);
+    -moz-transform: skew(10deg, 0);
+    -ms-transform: skew(10deg, 0);
+    -o-transform: skew(10deg, 0);
 }
 
 header nav a {
     white-space: nowrap;
-    padding: 0 clamp(2rem, 4vw, 4rem);
+    padding: 0 clamp(2rem, 4vw, 7rem);
     border-radius: 0.4rem;
     background-color: var(--dark);
-    border: 0.1rem solid var(--primary-db);
+    border: 0.2rem solid var(--primary);
     height: 4rem;
     display: flex;
     flex-direction: column;
@@ -100,22 +152,53 @@ header nav a {
     cursor: pointer;
     font-weight: 400;
     letter-spacing: 0.1rem;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-    -webkit-transition: background-color 0.3s ease, border-color 0.3s ease;
-    -moz-transition: background-color 0.3s ease, border-color 0.3s ease;
-    -ms-transition: background-color 0.3s ease, border-color 0.3s ease;
-    -o-transition: background-color 0.3s ease, border-color 0.3s ease;
+    opacity: 0;
+    transform: translateX(-2rem) skew(-10deg, 0);
+    -webkit-transform: translateX(-2rem) skew(-10deg, 0);
+    -moz-transform: translateX(-2rem) skew(-10deg, 0);
+    -ms-transform: translateX(-2rem) skew(-10deg, 0);
+    -o-transform: translateX(-2rem) skew(-10deg, 0);
+    transition: transform 0.2s ease, background-color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
+    -webkit-transition: transform 0.2s ease, background-color 0.3s ease, opacity 0.3s ease;
+    -moz-transition: transform 0.2s ease, background-color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
+    -ms-transition: transform 0.2s ease, background-color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
+    -o-transition: transform 0.2s ease, background-color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
+    will-change: transform;
+    box-shadow: 0.5rem 0.6rem var(--dark-la);
 }
 
-header nav a:hover,
+header nav a:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+header nav a:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+header nav a:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+header nav a:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+header nav a:hover {
+    background-color: var(--primary);
+    transition: transform 0.2s ease, background-color 0.1s ease, opacity 0.3s ease;
+    -webkit-transition: transform 0.2s ease, background-color 0.1s ease, opacity 0.3s ease;
+    -moz-transition: transform 0.2s ease, background-color 0.1s ease, opacity 0.3s ease;
+    -ms-transition: transform 0.2s ease, background-color 0.1s ease, opacity 0.3s ease;
+    -o-transition: transform 0.2s ease, background-color 0.1s ease, opacity 0.3s ease;
+}
+
 header .social a:hover {
     background-color: var(--primary);
-    border-color: var(--primary-da);
-    transition: background-color 0.05s ease, border-color 0.05s ease;
-    -webkit-transition: background-color 0.05s ease, border-color 0.05s ease;
-    -moz-transition: background-color 0.05s ease, border-color 0.05s ease;
-    -ms-transition: background-color 0.05s ease, border-color 0.05s ease;
-    -o-transition: background-color 0.05s ease, border-color 0.05s ease;
+    transition: background-color 0.05s ease;
+    -webkit-transition: background-color 0.05s ease;
+    -moz-transition: background-color 0.05s ease;
+    -ms-transition: background-color 0.05s ease;
+    -o-transition: background-color 0.05s ease;
 }
 
 .icon {
@@ -200,17 +283,43 @@ header nav .flex a:not(.icon) {
     header {
         height: 100vh;
         height: 100dvh;
-        /* min-width: clamp(11rem, calc(7vw + 6vh), 18rem); */
         padding: clamp(2rem, 5vh, 5rem) 0;
-        /* flex-direction: column; */
         position: sticky;
         top: 0;
-        min-width: clamp(11rem, calc(7vw + 6vh), 13rem);
+        min-width: clamp(5rem, calc(5vw + 4vh), 8rem);
+    }
+
+    header nav {
+        left: unset;
+        bottom: 0;
+        top: 0;
+        left: 125%;
+        right: unset;
+        transform: translateX(-2rem);
+        -webkit-transform: translateX(-2rem);
+        -moz-transform: translateX(-2rem);
+        -ms-transform: translateX(-2rem);
+        -o-transform: translateX(-2rem);
+    }
+
+    header nav.show {
+        transform: translateX(0);
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+    }
+
+    header .logo_anchor img {
+        filter: drop-shadow(0.3rem -0.4rem 0 var(--dark));
+        -webkit-filter: drop-shadow(0.3rem -0.4rem 0 var(--dark));
     }
 
     header>.ctnr {
         flex-direction: column;
         width: unset;
+        transform: translateX(50%);
+        width: 100%;
     }
 
     .hambt {
@@ -225,30 +334,10 @@ header nav .flex a:not(.icon) {
     header .social {
         flex-direction: column;
         max-height: calc(85vh - 9rem);
-        overflow-y: auto;
-    }
-
-    header nav {
+        position: relative;
         left: unset;
-        bottom: 0;
-        top: 0;
-        left: 100%;
-        border-bottom: unset;
-        border-right: 0.2rem solid var(--primary-la);
-        overflow-y: auto;
-        transform: translateX(-2rem);
-        -webkit-transform: translateX(-2rem);
-        -moz-transform: translateX(-2rem);
-        -ms-transform: translateX(-2rem);
-        -o-transform: translateX(-2rem);
-    }
-
-    header nav.show {
-        transform: translateX(0);
-        -webkit-transform: translateX(0);
-        -moz-transform: translateX(0);
-        -ms-transform: translateX(0);
-        -o-transform: translateX(0);
+        right: unset;
+        margin-inline: unset;
     }
 
 }
