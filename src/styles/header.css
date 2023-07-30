@@ -2,7 +2,7 @@ header {
     background-color: var(--dark);
     border-bottom: 0.1rem solid var(--dark-la);
     width: 100%;
-    min-height: clamp(3rem, 9vw, 8rem);
+    min-height: clamp(3rem, 10vw, 8rem);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -26,6 +26,7 @@ header .logo_anchor img {
     width: clamp(4rem, 14vmin, 7rem);
     display: flex;
     filter: drop-shadow(-0.2rem 0.5rem 0 var(--dark));
+    -webkit-filter: drop-shadow(-0.2rem 0.5rem 0 var(--dark));
 }
 
 header .social,
